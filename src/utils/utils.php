@@ -35,6 +35,7 @@ function id($x) {
  */
 function idx(array $array, $key, $default = null) {
   // isset() is a micro-optimization - it is fast but fails for null values.
+  $key ??= '';
   if (isset($array[$key])) {
     return $array[$key];
   }
@@ -148,7 +149,7 @@ function mpull(array $list, $method, $key_method = null) {
     } else {
       $value = $object;
     }
-    $result[$key] = $value;
+    $result[$key ?? ''] = $value;
   }
   return $result;
 }
