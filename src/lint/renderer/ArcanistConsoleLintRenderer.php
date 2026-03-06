@@ -85,7 +85,8 @@ final class ArcanistConsoleLintRenderer extends ArcanistLintRenderer {
         $severity,
         $code,
         $name,
-        phutil_console_wrap($description, 4));
+        "    ".str_replace("\n", "\n    ", $description),
+      );
 
       if ($message->hasFileContext()) {
         $text[] = $this->renderContext($message, $data, $line_map);
