@@ -85,11 +85,11 @@ final class ArcanistLintPatcher extends Phobject {
       $working_offset = $orig_offset + $this->getCharacterDelta();
 
       $old_str = $lint->getOriginalText();
-      $old_len = strlen($old_str);
+      $old_len = strlen((string)$old_str);
       $new_str = $lint->getReplacementText();
-      $new_len = strlen($new_str);
+      $new_len = strlen((string)$new_str);
 
-      if ($working_offset == strlen($data)) {
+      if ($working_offset == strlen((string)$data)) {
         // Temporary hack to work around a destructive hphpi issue, see #451031.
         $data .= $new_str;
       } else {

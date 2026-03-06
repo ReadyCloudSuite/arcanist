@@ -307,8 +307,8 @@ final class ArcanistLintMessage extends Phobject {
     $replacement = $this->getReplacementText();
     $original = $this->getOriginalText();
 
-    $replacement_length = strlen($replacement);
-    $original_length = strlen($original);
+    $replacement_length = strlen((string)$replacement);
+    $original_length = strlen((string)$original);
 
     $minimum_length = min($original_length, $replacement_length);
 
